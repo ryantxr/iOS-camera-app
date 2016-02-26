@@ -41,6 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // Takes the user to app settings
+    /*
+    Call this function like this:
+    dispatch_async( dispatch_get_main_queue() ) {
+        (UIApplication.sharedApplication().delegate as! AppDelegate).openAppSettings()
+    }
+    */
+    func openAppSettings() {
+        let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+        if let url = settingsUrl {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
 
 }
 

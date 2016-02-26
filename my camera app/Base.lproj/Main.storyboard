@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="my_camera_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeP-QN-f9x">
+                                <rect key="frame" x="0.0" y="28" width="600" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="r1y-UL-Xa8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejz-ZB-bUa">
+                                <rect key="frame" x="250" y="360" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ma7-1e-6yZ"/>
+                                    <constraint firstAttribute="height" constant="100" id="VGi-r6-2RK"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="shutter-button.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tz-jm-X5x">
+                                <rect key="frame" x="257" y="336" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ejz-ZB-bUa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E3U-bJ-5RA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OeP-QN-f9x" secondAttribute="trailing" constant="-20" id="M3h-n2-iuZ"/>
+                            <constraint firstItem="OeP-QN-f9x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="P0C-HB-Kgu"/>
+                            <constraint firstItem="6Tz-jm-X5x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTh-zD-Hkf"/>
+                            <constraint firstItem="Ejz-ZB-bUa" firstAttribute="top" secondItem="OeP-QN-f9x" secondAttribute="bottom" constant="32" id="dYA-9W-tKl"/>
+                            <constraint firstItem="OeP-QN-f9x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eyJ-vK-tEX"/>
+                            <constraint firstItem="6Tz-jm-X5x" firstAttribute="top" secondItem="OeP-QN-f9x" secondAttribute="bottom" constant="8" id="k6F-8f-aY4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noCameraLabel" destination="6Tz-jm-X5x" id="CzO-Ww-wox"/>
+                        <outlet property="videoView" destination="OeP-QN-f9x" id="PUu-QV-LKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="481" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shutter-button.png" width="256" height="256"/>
+    </resources>
 </document>
